@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://djcv348o2rob1"]
+
+[ext_resource type="Script" path="res://main_board.gd" id="1_js1na"]
+[ext_resource type="PackedScene" uid="uid://w40yj2nwcsl0" path="res://question.tscn" id="2_rqamr"]
+[ext_resource type="AudioStream" uid="uid://nuqja4efmowq" path="res://times-up.mp3" id="3_gq6xr"]
+[ext_resource type="Texture2D" uid="uid://c3p5lvht3aklk" path="res://dd.webp" id="3_xgfsr"]
+[ext_resource type="Script" path="res://DD.gd" id="4_kcnca"]
+[ext_resource type="AudioStream" uid="uid://b2lwagqnv2bnn" path="res://correct.mp3" id="4_yeqxl"]
+[ext_resource type="AudioStream" uid="uid://dty6pj4qish07" path="res://double.mp3" id="5_axyq8"]
+
+[node name="MainBoard" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_js1na")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+columns = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Question" parent="CanvasLayer" instance=ExtResource("2_rqamr")]
+visible = false
+
+[node name="DD" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xgfsr")
+script = ExtResource("4_kcnca")
+
+[node name="TimesUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gq6xr")
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yeqxl")
+
+[node name="DailyDouble" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_axyq8")
+volume_db = -5.0
+
+[connection signal="gui_input" from="CanvasLayer/Question" to="." method="_on_question_gui_input"]

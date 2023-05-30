@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnqdy7th0vfva"]
+
+[ext_resource type="Script" path="res://money_box.gd" id="1_pu631"]
+[ext_resource type="FontFile" uid="uid://dbfm21yanvcfp" path="res://Anton-Regular.ttf" id="1_x2jew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o17nf"]
+bg_color = Color(0.113725, 0.290196, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfw6j"]
+font = ExtResource("1_x2jew")
+font_size = 48
+font_color = Color(0.921569, 0.745098, 0.411765, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[node name="MoneyBox" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_o17nf")
+text = "$100"
+label_settings = SubResource("LabelSettings_bfw6j")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_pu631")
