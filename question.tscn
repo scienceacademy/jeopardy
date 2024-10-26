@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://w40yj2nwcsl0"]
+[gd_scene load_steps=5 format=3 uid="uid://w40yj2nwcsl0"]
 
 [ext_resource type="FontFile" uid="uid://1ilom8xq7b1n" path="res://RobotoSlab-SemiBold.ttf" id="1_qccp1"]
+[ext_resource type="Texture2D" uid="uid://c3p5lvht3aklk" path="res://dd.webp" id="2_vswq3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubtvs"]
 bg_color = Color(0.113725, 0.290196, 1, 1)
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(1000, 400)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_ubtvs")
@@ -30,3 +32,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
+
+[node name="Image" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_vswq3")

@@ -3,16 +3,16 @@ extends MarginContainer
 var _mb = load("res://money_box.tscn")
 var _h = load("res://header.tscn")
 @onready var grid = $GridContainer
-var double_jep = true
+@export var double_jep = false
 var final_jep = false
 var num_left = 0
 var doubles = 2 if double_jep else 1
 
 var categories = []
 var questions = []
-var filepath1 = "res://trivia8-end1.cfg"
-var filepath2 = "res://trivia8-end2.cfg"
-var game = filepath2
+@export_file var filepath1 
+@export_file var filepath2 
+@onready var game = filepath1
 
 func _ready():
 	load_data(game)
@@ -34,7 +34,7 @@ func load_data(file):
 		for k in keys:
 			qs.append(data.get_value(cat, k))
 		questions.append(qs)
-		prints(cat, qs)
+		#prints(cat, qs)
 #	var file = FileAccess.open(filepath, FileAccess.READ)
 #	var cat = -1
 ##	for cat in 6:

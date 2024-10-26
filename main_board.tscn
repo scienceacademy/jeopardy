@@ -16,6 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_js1na")
+filepath1 = "res://circuits.cfg"
+filepath2 = "res://circuits.cfg"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
